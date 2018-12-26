@@ -1,0 +1,25 @@
+<!--index.wxml-->
+<import src="../../conponents/history.wxml"/>
+
+  <view class="city_history">
+      
+        <view class="history_content">
+        
+        <scroll-view scroll-y="true"  style="height: {{ windowHeight }}px; width: {{ windowWidth }}px;" bindscrolltolower="loadMore" >
+          <view class="left">
+            <view wx:for="{{trips}}" wx:for-item="item" wx:key="" >
+              <template is="m-history"  wx:if="{{index%2==0}}" data="{{ trip : item}}" />
+            </view>
+          </view>
+    
+      
+          <view class="right">
+            <view wx:for="{{trips}}" wx:for-item="item" wx:key="">
+              <template is="m-history"  wx:if="{{index%2==1}}" data="{{ trip : item}}" />
+            </view>
+          </view>
+        </scroll-view>
+
+        </view>
+        
+    </view>
